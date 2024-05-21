@@ -18,7 +18,8 @@ score apk file -latest added in mail
   
 
 ## Running the test
-Test can be run from IDE , 
+Test can be run from IDE 
+
 1.LeagueTest.java - 
 * contains end to end test from splash screen to selecting new league, new team and adding players in favourites
 * Used testng priority parameter for setting the order of tests
