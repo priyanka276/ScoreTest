@@ -5,6 +5,7 @@ This repository contains UI test for Score Mobile application as part of intervi
 
 ## Requirement
 *Java -16
+
 *maven - any version
 *testng- 7.7.0
 *io.appium.java-client - 7.5.1
