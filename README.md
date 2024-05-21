@@ -4,13 +4,13 @@
 This repository contains UI test for Score Mobile application as part of interview process
 
 ## Requirement
-Java -16
-maven - any version
-testng- 7.7.0
-io.appium.java-client - 7.5.1
-Intellij or eclipse IDE
-appium2
-score apk file -latest added in mail
+*Java -16
+*maven - any version
+*testng- 7.7.0
+*io.appium.java-client - 7.5.1
+*Intellij or eclipse IDE
+*appium2
+*score apk file -latest added in mail
 
 ## About the tests
 * This project use data driven approach for running tests parallely
