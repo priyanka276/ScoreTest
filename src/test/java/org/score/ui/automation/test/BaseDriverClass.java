@@ -25,15 +25,13 @@ public class BaseDriverClass {
             desired.setCapability("appPackage", "com.fivemobile.thescore");
             desired.setCapability("appActivity", "com.fivemobile.thescore.ui.MainActivity");
 
-
             URL url = new URL("http://127.0.0.1:4723/");
-            driver = new AppiumDriver(url,desired);
+            driver = new  AppiumDriver (url,desired);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         }catch(Exception e) {
-            System.out.println("Cause is" + e.getClass());
+            System.out.println("Error at" + e.getClass());
         }
-
     }
 
     @AfterSuite
