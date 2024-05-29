@@ -1,67 +1,66 @@
 package org.score.ui.automation.pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.score.ui.automation.test.BaseDriverClass;
 import org.testng.Assert;
-
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import static org.testng.AssertJUnit.assertEquals;
 
 public class LeaguePage extends BaseDriverClass {
 
-    protected final AppiumDriver driver;
+    protected final AppiumDriver<MobileElement>  driver;
 
-    public LeaguePage(AppiumDriver driver) {
+    public LeaguePage(AppiumDriver<MobileElement>  driver) {
         this.driver =driver;
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    public WebElement getLeagueTitle() {
-        return driver.findElementById("title_onboarding");
+    public MobileElement getLeagueTitle() {
+        return driver.findElement(MobileBy.AndroidUIAutomator("new UiSelector().resourceId(\"com.fivemobile.thescore:id/title_onboarding\")"));
     }
 
-    public WebElement selectItemByName(String name){
+    public MobileElement selectItemByName(String name){
         return driver.findElementByXPath("//*[@text='"+name+"']");
     }
 
-    public WebElement backButton(){
+    public MobileElement backButton(){
         return driver.findElementByXPath("//android.widget.ImageButton[@content-desc='Navigate up']");
     }
 
-    public WebElement selectTeamByName(String name){
-        return driver.findElementByXPath("//android.widget.TextView[@text='"+name+"']");
+    public MobileElement selectTeamByName(String name){
+       return driver.findElementByXPath("//android.widget.TextView[@text='"+name+"']");
     }
 
-    public WebElement getSwitch(int index){
-        List<WebElement> elements = driver.findElementsById("selectedSwitch");
+    public MobileElement getSwitch(int index){
+        List<MobileElement> elements = driver.findElementsById("selectedSwitch");
         return elements.get(index);
     }
 
-    public WebElement mayBeLaterButton(){
+    public MobileElement mayBeLaterButton(){
         return driver.findElementById("btn_disallow");
     }
 
-    public WebElement selectLaterButton(){
+    public MobileElement selectLaterButton(){
         return driver.findElementById("btn_secondary");
     }
 
-    public WebElement continueButton(){
+    public MobileElement continueButton(){
         return driver.findElementById("action_button_text");
     }
 
-    public WebElement dismissModal(){
+    public MobileElement dismissModal(){
         return driver.findElementById("dismiss_modal");
     }
 
-    public WebElement addButton(){
-        return (WebElement) driver.findElementsByClassName("android.widget.ImageView").get(1);
+    public MobileElement addButton(){
+        return driver.findElementsByClassName("android.widget.ImageView").get(1);
     }
 
 
@@ -78,8 +77,8 @@ public class LeaguePage extends BaseDriverClass {
         return driver.findElementByXPath("//*[@resource-id='com.fivemobile.thescore:id/txt_player_name']");
     }
 
-    public WebElement playerIcon() {
-        return (WebElement) driver.findElementsByXPath("//*[@resource-id='com.fivemobile.thescore:id/player_headshot_image_view']").get(0);
+    public MobileElement playerIcon() {
+        return driver.findElementsByXPath("//*[@resource-id='com.fivemobile.thescore:id/player_headshot_image_view']").get(0);
     }
 
     public WebElement getTeamTitle(){
@@ -88,7 +87,7 @@ public class LeaguePage extends BaseDriverClass {
 
     public WebElement getElementByClassText(String text, String classText){
         WebElement element = null;
-        List<WebElement> list = driver.findElementsByClassName(classText);
+        List<MobileElement> list = driver.findElementsByClassName(classText);
         for(WebElement e : list){
             if(e.getText().equals(text)){
                 element = e;
