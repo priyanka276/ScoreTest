@@ -1,0 +1,13 @@
+<suite name="Parameter test Suite"  verbose="1">
+    <parameter name="league-param" value="NHL Hockey" />
+    <parameter name="team-param" value="Toronto Maple Leafs" />
+    <test name="Parameter Test League">
+        <classes>
+            <class name="org.score.ui.automation.test.LeagueTest">
+                <methods>
+                    <include name="e2eTestSelectLeagueAndTeam" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
