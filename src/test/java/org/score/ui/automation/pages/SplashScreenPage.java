@@ -1,25 +1,25 @@
 package org.score.ui.automation.pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
-
+import java.util.concurrent.TimeUnit;
 import static org.testng.AssertJUnit.assertEquals;
 
 
 public class SplashScreenPage {
-    public final AppiumDriver driver;
+    public final AppiumDriver<MobileElement>  driver;
 
-    public SplashScreenPage(AppiumDriver driver) {
+    public SplashScreenPage(AppiumDriver<MobileElement>  driver) {
         this.driver =driver;
-       // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    public WebElement getStartedButton() {
-        return driver.findElementById("action_button_text");
+    public MobileElement getStartedButton() {
+        return driver.findElement(MobileBy.AndroidUIAutomator("new UiSelector().resourceId(\"com.fivemobile.thescore:id/action_button_text\")"));
     }
 
     public void assertGetStartedButtonText(WebElement element) {
