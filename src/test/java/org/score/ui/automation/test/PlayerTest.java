@@ -12,7 +12,7 @@ public class PlayerTest extends BaseDriverClass {
     public SplashScreenPage splashPage;
     public LeaguePage leaguePage;
     String text = "Choose your favorite leagues";
-    String team = "NFL Football";
+    String team = "NHL Hockey";
 
     @BeforeClass
     public void setUpLeague() {
